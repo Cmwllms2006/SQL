@@ -1,0 +1,29 @@
+--Create a Department Store database
+
+CREATE TABLE store (id integer primary key, item text, department text, price integer, popularity integer);
+
+INSERT INTO store VALUES (1, "black heels", "women's", 24.99, 75);
+INSERT INTO store VALUES (2, "unicorn sweater", "girl's", 12.99, 50);
+INSERT INTO store VALUES (3, "tennis shoes", "men's", 50, 85);
+INSERT INTO store VALUES (4, "dinosaur t-shirt", "boy's", 10, 60);
+INSERT INTO store VALUES (5, "seashell toothbrush holder", "bed and bath", 15.99, 31);
+INSERT INTO store VALUES (6, "backless dress", "women's", 35.99, 95);
+INSERT INTO store VALUES (7, "gold ring", "jewelry", 150, 100);
+INSERT INTO store VALUES (8, "bracelet charms", "jewelry", 42.99, 64);
+INSERT INTO store VALUES (9, "white duvet", "bed and bath", 75.99, 97);
+INSERT INTO store VALUEs (10, "bicycle", "toy's", 45,99);
+
+--Display the database ordered by price.
+SELECT * FROM store
+ORDER BY price;
+
+--What are the 3 most poplar items?
+SELECT item, price, popularity
+FROM store
+Order by popularity desc
+LIMIT 3;
+
+--What is the avg price of items in the women's department?
+SELECT AVG(price) "avg women's item price"
+FROM store
+WHERE department= "women's";
